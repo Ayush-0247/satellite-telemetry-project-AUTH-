@@ -1,0 +1,132 @@
+/* Full-page background */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top right, #6366f1, #020617 65%);
+  perspective: 1200px;
+  color: #fff;
+}
+
+/* Login card */
+.login-container h2 {
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+  letter-spacing: 0.6px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Form card */
+.login-container form {
+  width: 340px;
+  background: rgb(22, 10, 10);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 35px 30px;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform-style: preserve-3d;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+/* Floating card animation */
+@keyframes floatCard {
+  0% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotateX(2.5deg);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* Inputs */
+.login-container input {
+  width: 90%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-container input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Login button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow:
+    0 10px 0 rgba(0, 0, 0, 0.35),
+    0 18px 30px rgba(0, 0, 0, 0.45);
+  transition: all 0.25s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.3),
+    0 14px 24px rgba(0, 0, 0, 0.35);
+}
+
+.login-btn:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Message text */
+.login-container p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Register link */
+.login-container a {
+  transition: color 0.25s ease;
+}
+
+.login-container a:hover {
+  color: #818cf8;
+}
+
+/* Fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 420px) {
+  .login-container form {
+    width: 90%;
+    padding: 30px 22px;
+  }
+}

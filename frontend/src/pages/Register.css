@@ -1,0 +1,124 @@
+/* Full screen background */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #22c55e, #020617 65%);
+  perspective: 1200px;
+  color: #fff;
+}
+
+/* Title */
+.register-container h2 {
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+  letter-spacing: 0.6px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Glass form card */
+.register-container form {
+  width: 360px;
+  background: rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 35px 32px;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform-style: preserve-3d;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes floatCard {
+  0% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotateX(3deg);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* Inputs */
+.register-container input {
+  width: 90%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.95);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.register-container input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Register button */
+.register-container button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #022c22;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  box-shadow:
+    0 10px 0 rgba(0, 0, 0, 0.35),
+    0 18px 30px rgba(0, 0, 0, 0.45);
+  transition: all 0.25s ease;
+}
+
+.register-container button:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.3),
+    0 14px 24px rgba(0, 0, 0, 0.35);
+}
+
+.register-container button:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Message */
+.register-container p {
+  margin-top: 18px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 420px) {
+  .register-container form {
+    width: 90%;
+    padding: 30px 22px;
+  }
+}

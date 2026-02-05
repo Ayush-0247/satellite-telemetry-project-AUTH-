@@ -1,0 +1,113 @@
+/* Full screen gradient background */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #6366f1, #0f172a 60%);
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+/* Glass card with 3D depth */
+.auth-card {
+  background: rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 50px 60px;
+  text-align: center;
+  color: #fff;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotateX(3deg);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* Title */
+.auth-card h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Subtitle */
+.auth-card p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 35px;
+}
+
+/* Button container */
+.auth-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* 3D Buttons */
+.auth-btn {
+  padding: 14px 26px;
+  border-radius: 14px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transform-style: preserve-3d;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 10px 0 rgba(0, 0, 0, 0.35),
+    0 18px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Login button */
+.auth-btn.login {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+/* Register button */
+.auth-btn.register {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+/* Hover effect */
+.auth-btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.3),
+    0 14px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Click press effect */
+.auth-btn:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 40px 30px;
+  }
+
+  .auth-actions {
+    flex-direction: column;
+  }
+}
