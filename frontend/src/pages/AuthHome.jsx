@@ -7,7 +7,7 @@ function AuthHome() {
   return (
     <div className="auth-wrapper">
       <div className="auth-card">
-        <h2>Welcome 👋</h2>
+        <h2>Welcome </h2>
         <p>Are you already a user?</p>
 
         <div className="auth-actions">

@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top left, #22c55e, #020617 65%);
+  background: radial-gradient(circle at top left, #ffffff, #2ef7f47c 65%);
   perspective: 1200px;
   color: #fff;
 }
@@ -21,7 +21,7 @@
 /* Glass form card */
 .register-container form {
   width: 360px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgb(194, 194, 194);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
   border-radius: 20px;

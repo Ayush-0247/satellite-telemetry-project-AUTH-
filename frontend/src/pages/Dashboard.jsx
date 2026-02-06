@@ -14,31 +14,37 @@ import "./Dashboard.css";
 const Dashboard = () => {
   const [telemetry, setTelemetry] = useState(null);
   const [history, setHistory] = useState([]);
+  const [paused, setPaused] = useState(false);
+
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchTelemetry = async () => {
-      const res = await api.get("/telemetry");
-      const d = res.data.data;
+ useEffect(() => {
+  if (paused) return;
 
-      setTelemetry(d);
+  const fetchTelemetry = async () => {
+    const res = await api.get("/telemetry");
+    const d = res.data.data;
 
-      setHistory((prev) => [
-        ...prev.slice(-7),
-        {
-          time: new Date().toLocaleTimeString(),
-          temperature: d.core.temperature,
-          voltage: d.core.voltage,
-          battery: d.power.battery,
-          power: d.power.power,
-        },
-      ]);
-    };
+    setTelemetry(d);
 
-    fetchTelemetry();
-    const interval = setInterval(fetchTelemetry, 1500);
-    return () => clearInterval(interval);
-  }, []);
+    setHistory((prev) => [
+      ...prev.slice(-7),
+      {
+        time: new Date().toLocaleTimeString(),
+        temperature: d.core.temperature,
+        voltage: d.core.voltage,
+        battery: d.power.battery,
+        power: d.power.power,
+      },
+    ]);
+  };
+
+  fetchTelemetry();
+  const interval = setInterval(fetchTelemetry, 1500);
+
+  return () => clearInterval(interval);
+}, [paused]);
+
 
   // ✅ ONLY NEW FEATURE: LOGOUT
   const handleLogout = () => {
@@ -56,7 +62,13 @@ const Dashboard = () => {
         <div className="mc-title">Mission Control Dashboard</div>
 
         <div style={{ display: "flex", gap: "10px" }}>
-          <button className="pause-btn">⏸ PAUSE SYSTEM</button>
+          <button
+  className="pause-btn"
+  onClick={() => setPaused((p) => !p)}
+>
+  {paused ? "▶ RESUME SYSTEM" : "⏸ PAUSE SYSTEM"}
+</button>
+
           <button className="logout-btn" onClick={handleLogout}>
             ⎋ LOG OUT
           </button>
