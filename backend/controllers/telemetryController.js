@@ -5,13 +5,13 @@ const getTelemetry = async (req, res) => {
 
     let status = "OK";
 //
-   
+  
     if (temperature > 85 || voltage < 1.3 || voltage > 4.5) {
       status = "CRITICAL";
     } else if (temperature > 75 || voltage < 1.5 || voltage > 4.2) {
       status = "WARNING";
     }
-
+//
     const telemetry = {
       status,
 
