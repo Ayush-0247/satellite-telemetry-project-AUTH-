@@ -1,22 +1,23 @@
 :root {
-  --bg-root: #0b1220;
-  --bg-panel: #0f172a;
-  --bg-panel-soft: #111827;
+  --bg-root: #f8fafc;
+  --bg-panel: #ffffff;
+  --bg-panel-soft: #f1f5f9;
 
-  --border-subtle: rgba(0, 106, 255, 0.15);
+  --border-subtle: rgba(15, 23, 42, 0.12);
 
-  --text-primary: #e5e7eb;
-  --text-secondary: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #020617;
   --text-muted: #64748b;
 
-  --accent-blue: #3b82f6;
-  --accent-blue-soft: rgba(59, 130, 246, 0.15);
+  --accent-blue: #2563eb;
+  --accent-blue-soft: rgba(37, 99, 235, 0.12);
 
-  --accent-red: #ef4444;
-  --accent-red-soft: rgba(239, 68, 68, 0.15);
+  --accent-red: #dc2626;
+  --accent-red-soft: rgba(220, 38, 38, 0.12);
 
-  --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 10px 25px rgba(2, 6, 23, 0.08);
 }
+
 .mc-root {
   height: 100vh;
   background: var(--bg-root);
@@ -116,7 +117,7 @@
 }
 
 .row-value {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 16px;
   font-weight: 600;
 }
@@ -198,3 +199,22 @@
 }
 
 
+.mc-topbar {
+  background: linear-gradient(180deg, #ffffff, #f1f5f9);
+}
+.mc-left {
+  background: #ffffff;
+}
+.mc-right {
+  background: #f8fafc;
+}
+.status-pill {
+  background: var(--accent-blue-soft);
+  color: var(--accent-blue);
+}
+.chart-box {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+.section-title {
+  color: #0f172a;
+}
