@@ -4,7 +4,7 @@ const getTelemetry = async (req, res) => {
     const voltage = 1.55 + Math.random() * 3.5;  // V (1.55–5.05)
 
     let status = "OK";
-
+//
    
     if (temperature > 85 || voltage < 1.3 || voltage > 4.5) {
       status = "CRITICAL";
