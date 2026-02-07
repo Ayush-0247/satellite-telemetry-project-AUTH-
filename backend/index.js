@@ -6,9 +6,8 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 
 import authRoutes from "./routes/authRoutes.js";
-import telemetryRoutes from "./routes/telemetryRoutes.js";
 import User from "./models/User.js";
-
+import telemetryRoutes from "./routes/telemetryRoutes.js"
 connectDB();
 
 const app = express();
@@ -17,9 +16,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// routes
+// routes 
 app.use("/api/auth", authRoutes);
-app.use("/api/telemetry", telemetryRoutes);
+app.use("/api/telemetry" , telemetryRoutes)
 
 // test route
 app.get("/api", (req, res) => {
